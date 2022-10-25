@@ -105,3 +105,8 @@ li {
     padding-top: 100px;
     padding-left: 40px;
 }
+
+/* Colour of visited links remain white */
+a:visited {
+    color: white;
+}
