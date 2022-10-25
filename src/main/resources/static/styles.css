@@ -53,6 +53,52 @@ li {
     margin-left: 5%;
     font-weight: bold;
     font-size: 35px;
+
+}
+
+
+/* ------------------------ */
+
+.links-container-section{
+
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 50%;
+}
+
+.links-section{
+    background-color: rgba(100,100,100,0.50);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.links-section:hover{
+    color: red;
+    font-style: italic;
+}
+
+.tekst-section{
+    position: relative;
+    top: 60%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic
+}
+
+.julekugle-section{
+    position: relative;
+    top: 75%;
+    display: flex;
+    justify-content: center;
 }
 
 #inspiration, #kontakt, #omos{
