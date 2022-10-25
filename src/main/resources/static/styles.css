@@ -4,6 +4,10 @@ body, html {
     margin: 0;
 }
 
+section {
+    min-height: 100vh;
+}
+
 
 .index-top-container{
     background: url("images/julebillede.jpeg");
@@ -33,6 +37,12 @@ nav > ul {
     justify-content: space-around;
 }
 
+.left-header a, nav.menu a {
+    text-decoration: none;
+}
+/*left-header nav ul li a*/
+
+
 li {
     list-style-type: none;
 }
@@ -43,4 +53,9 @@ li {
     margin-left: 5%;
     font-weight: bold;
     font-size: 35px;
+}
+
+#inspiration, #kontakt, #omos{
+    padding-top: 100px;
+    padding-left: 40px;
 }
