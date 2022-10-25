@@ -1,6 +1,4 @@
 
-
-
 body, html {
     height: 100%;
     margin: 0;
@@ -14,4 +12,35 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 
+}
+
+.header-top{
+    background-color: grey;
+    color: white;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    opacity: 0.75;
+    height: 90px;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type: none;
+}
+
+.left-header{
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    font-weight: bold;
+    font-size: 35px;
 }
