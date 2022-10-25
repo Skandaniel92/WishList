@@ -15,16 +15,16 @@ body, html {
 }
 
 .header-top{
-    background-color: grey;
+    background-color: rgba(100,100,100,0.50);
     color: white;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    opacity: 0.75;
     height: 90px;
     align-content: center;
     position: fixed;
     top: 0;
     width: 100%;
+    font-size: 25px;
 }
 
 nav > ul {
