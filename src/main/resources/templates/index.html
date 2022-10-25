@@ -6,8 +6,18 @@
     <title>Julegaveønsker</title>
 </head>
 <body>
-<p>Julegaveønsker</p>
-<p>Glædelig jul</p>
-<p>Lad os se, Sebastian</p>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="w : ${wishes}">
+        <td th:text="${w.item_name}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
