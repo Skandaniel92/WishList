@@ -8,8 +8,8 @@
 <h1>Lav en ny ønskeliste</h1>
 <div class="input-form-wishlist">
     <form action="/createWishList" method="post" th:action="@{/createWishList}" th:object="${wishList}">
-        <label for="name">Ønskelistens navn </label>
-        <input id="name" name="name" type="text" autofocus required>
+        <label for="wishlist_name">Ønskelistens navn </label>
+        <input id="wishlist_name" name="wishlist_name" type="text" autofocus required>
         <button type="submit"> opret ønskeliste </button>
     </form>
 </div>

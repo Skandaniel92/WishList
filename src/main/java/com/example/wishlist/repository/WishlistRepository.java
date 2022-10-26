@@ -84,4 +84,18 @@ public class WishlistRepository {
     }
     return wishes;
   }
+
+  public void addWishlist(WishList wishList) {
+    try {
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      String sql = "INSERT INTO wishlists (wishlist_name) VALUES (?)";
+      PreparedStatement pst = conn.prepareStatement(sql);
+      pst.setString(1, wishList.getWishlist_name());
+      pst.executeUpdate();
+
+    } catch (SQLException e) {
+      System.err.println("Cannot add wishlist");
+      e.printStackTrace();
+    }
+  }
 }

@@ -49,6 +49,7 @@ WishlistService wishlistService;
 
   @PostMapping("/createWishList")
   public String createWishList(@ModelAttribute WishList wishList){
+    wishlistService.addWishlist(wishList);
     return "redirect:/editWishes";
   }
 

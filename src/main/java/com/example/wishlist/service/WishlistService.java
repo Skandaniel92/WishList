@@ -31,4 +31,8 @@ public class WishlistService {
   public List<Wish> findWishesById(int wishlist_id) {
     return wishlistRepository.fetchWishesById(wishlist_id);
   }
+
+  public void addWishlist(WishList wishList) {
+    wishlistRepository.addWishlist(wishList);
+  }
 }
