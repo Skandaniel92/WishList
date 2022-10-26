@@ -112,3 +112,25 @@ li {
 a:visited {
     color: red;
 }
+
+/* Appearance of wishlist table */
+
+#wishlist-table {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+td, th {
+    padding: 15px;
+    text-align: left;
+    background-color: snow;
+}
+
+tr:hover > td {
+    background-color: mediumaquamarine;
+}
+
+#wishlist-main-frame {
+    display: grid;
+    justify-content: center;
+}

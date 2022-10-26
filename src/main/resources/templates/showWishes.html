@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <link rel="stylesheet" th:href="@{styles.css}" href="../static/styles.css">
     <meta charset="UTF-8">
@@ -14,11 +14,13 @@
     </thead>
 
     <tbody>
+    <tr th:if="${wishes.empty}">
+        <td>Ønskelisten er tom</td>
+    </tr>
     <tr th:each="w : ${wishes}">
         <td th:text="${w.item_name}"></td>
     </tr>
     </tbody>
 </table>
-
 </body>
 </html>
