@@ -99,6 +99,8 @@ li {
     top: 75%;
     display: flex;
     justify-content: center;
+    /*TEST*/
+
 }
 
 #inspiration, #kontakt, #omos{
