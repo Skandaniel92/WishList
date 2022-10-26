@@ -6,17 +6,20 @@
     <title>Dine Julegaveønsker</title>
 </head>
 <body>
-<a class="create-wish-btn" th:href="@{'showCreateWishList'}"> Tilføj en ny ønskeliste </a>
+<a class="create-wish-btn" th:href="@{'showCreateWishList'}" style="color: black"> Tilføj en ny ønskeliste </a>
 <table>
     <thead>
     <tr>
         <th>Name</th>
+        <th>vis ønsker</th>
+
     </tr>
     </thead>
 
     <tbody>
-    <tr th:each="w : ${wishes}">
-        <td th:text="${w.item_name}"></td>
+    <tr th:each="w : ${wishlists}">
+        <td th:text="${w.wishlist_name}"></td>
+        <td> <a th:href="@{'/showWishes/' + ${w.wishlist_id}}"> Vis alle ønskerne</a></td>
     </tr>
     </tbody>
 </table>

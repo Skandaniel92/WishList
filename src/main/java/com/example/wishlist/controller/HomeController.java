@@ -2,12 +2,12 @@ package com.example.wishlist.controller;
 
 import com.example.wishlist.model.Wish;
 import com.example.wishlist.model.WishList;
-import com.example.wishlist.repository.WishlistRepository;
 import com.example.wishlist.service.WishlistService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -24,16 +24,22 @@ WishlistService wishlistService;
     return "index";
   }
 
-  @GetMapping("/showWishes")
-  public String showWishes(Model model) {
-    model.addAttribute("wishes", wishlistService.fetchAll());
-    return "showWishes";
-  }
+//  @GetMapping("/showWishes")
+//  public String showWishes(Model model) {
+//    model.addAttribute("wishes", wishlistService.fetchAllWishes());
+//    return "showWishes";
+//  }
 
 
   @GetMapping("/makeWish")
   public String showMakeWish(){
     return "makeWish";
+  }
+
+  @GetMapping("/showWishes/{wishlist_id}")
+  public String showWishesById(@PathVariable("wishlist_id") int wishlist_id, Model model){
+    model.addAttribute("wishes",wishlistService.findWishesById(wishlist_id));
+    return "/showWishes";
   }
 
   @GetMapping("/showCreateWishList")
@@ -48,7 +54,7 @@ WishlistService wishlistService;
 
   @GetMapping("/editWishes")
   public String showEditWish(Model model){
-    model.addAttribute("wishes", wishlistService.fetchAll());
+    model.addAttribute("wishlists", wishlistService.fetchAllWishlists());
     return "editWishes";
   }
 

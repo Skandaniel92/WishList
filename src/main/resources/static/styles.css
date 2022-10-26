@@ -110,5 +110,5 @@ li {
 
 /* Colour of visited links remain white */
 a:visited {
-    color: white;
+    color: red;
 }

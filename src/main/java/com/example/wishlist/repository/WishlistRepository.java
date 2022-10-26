@@ -1,8 +1,8 @@
 package com.example.wishlist.repository;
 
 import com.example.wishlist.model.Wish;
+import com.example.wishlist.model.WishList;
 import org.springframework.stereotype.Repository;
-import org.thymeleaf.preprocessor.PreProcessor;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,12 +15,59 @@ public class WishlistRepository {
   private final String user = "christmas_wishlist_user";
   private final String password = "1234";
 
-  public List<Wish> fetchAll() {
+  public List<Wish> fetchAllWishes() {
     ArrayList<Wish> wishes = new ArrayList<>();
 
     try {
       Connection conn = DriverManager.getConnection(databaseURL, user, password);
       PreparedStatement pst = conn.prepareStatement("SELECT * FROM wishlist");
+      ResultSet rs = pst.executeQuery();
+
+      while (rs.next()) {
+        int item_id = rs.getInt(1);
+        String item_name = rs.getString(2);
+        double item_price = rs.getDouble(3);
+        String item_link = rs.getString(4);
+
+        wishes.add(new Wish(item_id, item_name, item_price, item_link));
+      }
+    } catch (SQLException e) {
+      System.err.println("Cannot connect");
+      e.printStackTrace();
+    }
+    return wishes;
+  }
+
+  public List<WishList> fetchAllWishlists() {
+    ArrayList<WishList> wishLists = new ArrayList<>();
+
+    try {
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      PreparedStatement pst = conn.prepareStatement("SELECT * FROM wishlists");
+      ResultSet rs = pst.executeQuery();
+
+      while (rs.next()) {
+        int wishlist_id = rs.getInt(1);
+        String wishlist_name = rs.getString(2);
+
+        WishList wishList = new WishList(wishlist_id, wishlist_name);
+        wishLists.add(wishList);
+
+      }
+    } catch (SQLException e) {
+      System.err.println("Cannot connect");
+      e.printStackTrace();
+    }
+    return wishLists;
+  }
+
+  public List<Wish> fetchWishesById(int wishlist_id) {
+    ArrayList<Wish> wishes = new ArrayList<>();
+
+    try {
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      PreparedStatement pst = conn.prepareStatement("SELECT * FROM wishlist where wishlist_id = ?");
+      pst.setInt(1, wishlist_id);
       ResultSet rs = pst.executeQuery();
 
       while (rs.next()) {
