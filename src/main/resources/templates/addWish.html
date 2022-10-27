@@ -11,7 +11,7 @@
 
 <div class="input-form-wishlist">
     <h1>Tilføj et nyt ønske</h1>
-    <form action="/addWish" method="post" th:action="@{/addWish}" th:object="${wish}">
+    <form action="/addWish" method="post" th:action="@{/addWish/{wishlist_id}}" th:object="${wish}">
 
         <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist_id}">
 
@@ -22,13 +22,17 @@
         <input id="item_price" name="item_price" type="number">
 
         <label for="item_link">Link</label>
-        <input id="item_link" name="item_link" type="url">
-
-
-
+        <input id="item_link" name="item_link" type="text">
 
         <button type="submit">Tilføj ønske</button>
     </form>
+
+    <tr th:if="${wishes.empty}">
+        <td>Ønskelisten er tom</td>
+    </tr>
+    <tr th:each="w : ${wishes}">
+        <td th:text="${w.item_name}"></td>
+    </tr>
 </div>
 </body>
 </html>
