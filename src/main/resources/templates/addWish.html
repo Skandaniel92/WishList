@@ -11,9 +11,9 @@
 
 <div class="input-form-wishlist">
     <h1>Tilføj et nyt ønske</h1>
-    <form action="/addWish" method="post" th:action="@{/addWish/{wishlist_id}}">
+    <form action="/addWish" method="post" th:action="@{/addWish/{wishlist_id}}" th:object="${wish}">
 
-        <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist}">
+        <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist_id}">
 
         <label for="item_name">Ønskebeskrivelse</label>
         <input id="item_name" name="item_name" type="text" autofocus required>
@@ -26,24 +26,23 @@
 
         <button type="submit">Tilføj ønske</button>
     </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:if="${wishes.empty}">
+            <td>Ønskelisten er tom</td>
+        </tr>
+        <tr th:each="w : ${wishes}">
+            <td th:text="${w.item_name}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-
-
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <tr th:if="${wishes.empty}">
-        <td>Ønskelisten er tom</td>
-    </tr>
-    <tr th:each="w : ${wishes}">
-        <td th:text="${w.item_name}"></td>
-    </tr>
-    </tbody>
-</table>
 </body>
 </html>

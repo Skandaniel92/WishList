@@ -5,10 +5,7 @@ import com.example.wishlist.model.WishList;
 import com.example.wishlist.service.WishlistService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HomeController {
@@ -59,11 +56,11 @@ WishlistService wishlistService;
     return "editWishes";
   }
 
-
   @PostMapping("/addWish/{wishlist_id}")
   public String makeWish(@ModelAttribute Wish wish){
-    wishlistService.addWish(wish);
-    return "redirect:/addWish/" + wish.getWishlist_id();
+    wishlistService.makeAWish(wish);
+
+    return "redirect:/addWish/"+wish.getWishlist_id();
   }
 
   @GetMapping("/addWish/{wishlist_id}")
@@ -72,14 +69,5 @@ WishlistService wishlistService;
     model.addAttribute("wishes",wishlistService.findWishesById(wishlist_id));
     return "addWish";
   }
-
-  /*
-  @GetMapping("/addWish/{wishlist_id}")
-  public String showWishesAtAddWishPage(@PathVariable("wishlist_id") int wishlist_id, Model model){
-    model.addAttribute("wishlist", wishlist_id);
-    model.addAttribute("wishes",wishlistService.findWishesById(wishlist_id));
-    return "addWish/{wishlist_id}";
-  }
-*/
 
 }
