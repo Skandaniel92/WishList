@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" th:href="@{styles.css}" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <meta charset="UTF-8">
     <title>Julegaveønsker</title>
 </head>
 <body>
 
-<header class="header-top">
-    <div class="left-header"><a href="/">Julegaveønsker<img src="images/julesok.png"></a></div>
-    <nav class="menu">
-        <ul>
-            <li><a href="#inspiration">Inspiration</a></li>
-            <li> <a href="#omos">Om os</a></li>
-            <li> <a href="#kontakt">Kontakt</a></li>
-        </ul>
-    </nav>
-</header>
-<!-- <div th:insert="fragments/header_fragment"></div> -->
+<div th:insert="fragments/header_fragment"></div>
 
-<table>
+
+<table class = "show-wishlist">
     <thead>
     <tr>
         <th>Name</th>
+        <th>Pris</th>
+        <th>Link</th>
     </tr>
     </thead>
 
@@ -32,6 +25,8 @@
     </tr>
     <tr th:each="w : ${wishes}">
         <td th:text="${w.item_name}"></td>
+        <td th:number="${w.item_price}"></td>
+        <td th:text="${w.item_link}"></td>
     </tr>
     </tbody>
 </table>
