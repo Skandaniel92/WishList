@@ -5,14 +5,25 @@ public class Wish {
   private String item_name;
   private double item_price;
   private String item_link;
+  private int wishlist_id;
 
   public Wish() {}
 
-  public Wish(int item_id, String item_name, double item_price, String item_link) {
+  public Wish(int item_id, String item_name, double item_price, String item_link, int wishlist_id) {
     this.item_id = item_id;
     this.item_name = item_name;
     this.item_price = item_price;
     this.item_link = item_link;
+    this.wishlist_id= wishlist_id;
+  }
+
+
+  public int getWishlist_id() {
+    return wishlist_id;
+  }
+
+  public void setWishlist_id(int wishlist_id) {
+    this.wishlist_id = wishlist_id;
   }
 
   public int getItem_id() {

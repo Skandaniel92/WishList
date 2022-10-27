@@ -28,8 +28,9 @@ public class WishlistRepository {
         String item_name = rs.getString(2);
         double item_price = rs.getDouble(3);
         String item_link = rs.getString(4);
+        int wishlist_id = rs.getInt(5);
 
-        wishes.add(new Wish(item_id, item_name, item_price, item_link));
+        wishes.add(new Wish(item_id, item_name, item_price, item_link, wishlist_id));
       }
     } catch (SQLException e) {
       System.err.println("Cannot connect");
@@ -75,8 +76,9 @@ public class WishlistRepository {
         String item_name = rs.getString(2);
         double item_price = rs.getDouble(3);
         String item_link = rs.getString(4);
+        //wishlist_id = rs.getInt(5);
 
-        wishes.add(new Wish(item_id, item_name, item_price, item_link));
+        wishes.add(new Wish(item_id, item_name, item_price, item_link, wishlist_id));
       }
     } catch (SQLException e) {
       System.err.println("Cannot connect");

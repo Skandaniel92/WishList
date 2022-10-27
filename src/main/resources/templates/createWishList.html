@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{styles.css}" href="../static/styles.css">
 </head>
 <body>
-<h1>Lav en ny ønskeliste</h1>
+
+<div th:insert="fragments/header_fragment"></div>
+
 <div class="input-form-wishlist">
+    <h1>Lav en ny ønskeliste</h1>
     <form action="/createWishList" method="post" th:action="@{/createWishList}" th:object="${wishList}">
         <label for="wishlist_name">Ønskelistens navn </label>
         <input id="wishlist_name" name="wishlist_name" type="text" autofocus required>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a wish</title>
+    <link rel="stylesheet" th:href="@{styles.css}" href="../static/styles.css">
+</head>
+<body>
+
+<div th:insert="fragments/header_fragment"></div>
+
+<div class="input-form-wishlist">
+    <h1>Tilføj et nyt ønske</h1>
+    <form action="/addWish" method="post" th:action="@{/addWish}" th:object="${wish}">
+
+        <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist_id}">
+
+        <label for="item_name">Ønskebeskrivelse</label>
+        <input id="item_name" name="item_name" type="text" autofocus required>
+
+        <label for="item_price">Pris</label>
+        <input id="item_price" name="item_price" type="number">
+
+        <label for="item_link">Link</label>
+        <input id="item_link" name="item_link" type="url">
+
+
+
+
+        <button type="submit">Tilføj ønske</button>
+    </form>
+</div>
+</body>
+</html>
