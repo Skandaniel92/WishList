@@ -2,6 +2,7 @@ package com.example.wishlist.repository;
 
 import com.example.wishlist.model.Wish;
 import com.example.wishlist.model.WishList;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
@@ -11,9 +12,15 @@ import java.util.List;
 @Repository
 public class WishlistRepository {
 
-  private final String databaseURL = "jdbc:mysql://localhost:3306/christmas_wishlist";
-  private final String user = "christmas_wishlist_user";
-  private final String password = "1234";
+  @Value("${spring.datasource.url}")
+  private String databaseURL;
+  @Value("${spring.datasource.username}")
+  private String user;
+  @Value("${spring.datasource.password}")
+  private String password;
+  //private final String databaseURL = "jdbc:mysql://localhost:3306/christmas_wishlist";
+  //private final String user = "christmas_wishlist_user";
+  //private final String password = "1234";
 
   public List<Wish> fetchAllWishes() {
     ArrayList<Wish> wishes = new ArrayList<>();
