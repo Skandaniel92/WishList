@@ -17,11 +17,11 @@
     </thead>
 
     <tbody>
-    <tr th:if="${'wishes.empty'}">
+    <tr th:if="${wishes.empty}">
         <td>Ønskelisten er tom</td>
     </tr>
-    <tr th:each="w : ${'wishes'}">
-        <td th:text="${'w.item_name'}"></td>
+    <tr th:each="w : ${wishes}">
+        <td th:text="${w.item_name}"></td>
     </tr>
     </tbody>
 </table>
