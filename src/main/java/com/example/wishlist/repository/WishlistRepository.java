@@ -18,6 +18,7 @@ public class WishlistRepository {
   private String user;
   @Value("${spring.datasource.password}")
   private String password;
+
   //private final String databaseURL = "jdbc:mysql://localhost:3306/christmas_wishlist";
   //private final String user = "christmas_wishlist_user";
   //private final String password = "1234";
