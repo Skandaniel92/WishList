@@ -56,11 +56,11 @@ WishlistService wishlistService;
     return "editWishes";
   }
 
+
   @PostMapping("/addWish/{wishlist_id}")
   public String makeWish(@ModelAttribute Wish wish){
-    wishlistService.makeAWish(wish);
-
-    return "redirect:/addWish/"+wish.getWishlist_id();
+    wishlistService.addWish(wish);
+    return "redirect:/addWish/" + wish.getWishlist_id();
   }
 
   @GetMapping("/addWish/{wishlist_id}")

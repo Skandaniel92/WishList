@@ -18,7 +18,9 @@ public class WishlistRepository {
   private String user;
   @Value("${spring.datasource.password}")
   private String password;
-
+  //private final String databaseURL = "jdbc:mysql://localhost:3306/christmas_wishlist";
+  //private final String user = "christmas_wishlist_user";
+  //private final String password = "1234";
 
   public List<Wish> fetchAllWishes() {
     ArrayList<Wish> wishes = new ArrayList<>();
@@ -106,7 +108,7 @@ public class WishlistRepository {
     }
   }
 
-  public void addAWish(Wish wish){
+  public void addWish(Wish wish){
 
     try {
       Connection conn = DriverManager.getConnection(databaseURL, user, password);
@@ -118,8 +120,6 @@ public class WishlistRepository {
       pst.setString(3, wish.getItem_link());
       pst.setInt(4,wish.getWishlist_id());
       pst.executeUpdate();
-
-
 
     } catch (SQLException e) {
       System.err.println("Cannot connect");
