@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" th:href="@{../static/styles.css}" href="../static/styles.css">
+    <link rel="stylesheet" th:href="@{styles.css}" href="/styles.css">
     <meta charset="UTF-8">
     <title>Dine Julegaveønsker</title>
 </head>
@@ -12,7 +12,7 @@
 
 <div id="wishlist-main-frame">
     <div>
-        <a class="create-wish-btn" th:href="@{'showCreateWishList'}" style="color: black"> Tilføj en ny ønskeliste</a>
+        <a class="create-wish-btn" th:href="@{showCreateWishList}" style="color: black"> Tilføj en ny ønskeliste</a>
     </div>
     <div id="wishlist-box">
         <table id="wishlist-table">
