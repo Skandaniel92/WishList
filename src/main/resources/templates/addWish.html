@@ -27,12 +27,22 @@
         <button type="submit">Tilføj ønske</button>
     </form>
 
-    <tr th:if="${wishes.empty}">
-        <td>Ønskelisten er tom</td>
-    </tr>
-    <tr th:each="w : ${wishes}">
-        <td th:text="${w.item_name}"></td>
-    </tr>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:if="${wishes.empty}">
+            <td>Ønskelisten er tom</td>
+        </tr>
+        <tr th:each="w : ${wishes}">
+            <td th:text="${w.item_name}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
