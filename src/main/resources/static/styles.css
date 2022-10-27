@@ -28,12 +28,18 @@ section {
 
 .index-top-container{
     background: url("images/julebillede.jpeg");
-    height: 100%;
     background-position: center;
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
 
 }
+
+#inspiration {
+  background-color: #442B2D;
+
+}
+
 
 .header-top{
     background-color: rgba(100,100,100,0.50);
@@ -137,6 +143,10 @@ a:visited {
     border: 2px solid black;
 }
 
+#wishlist-box {
+    padding-top: 20px;
+}
+
 td, th {
     padding: 15px;
     text-align: left;
@@ -150,4 +160,5 @@ tr:hover > td {
 #wishlist-main-frame {
     display: grid;
     justify-content: center;
+    padding-top: 200px;
 }

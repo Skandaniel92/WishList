@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" th:href="@{styles.css}" href="../static/styles.css">
+    <link rel="stylesheet" th:href="@{styles.css}" href="/styles.css">
     <meta charset="UTF-8">
     <title>Julegaveønsker</title>
 </head>
 <body>
+
+<div th:replace="fragments/header_fragment"></div>
+
 <table>
     <thead>
     <tr>
@@ -14,11 +17,11 @@
     </thead>
 
     <tbody>
-    <tr th:if="${wishes.empty}">
+    <tr th:if="${'wishes.empty'}">
         <td>Ønskelisten er tom</td>
     </tr>
-    <tr th:each="w : ${wishes}">
-        <td th:text="${w.item_name}"></td>
+    <tr th:each="w : ${'wishes'}">
+        <td th:text="${'w.item_name'}"></td>
     </tr>
     </tbody>
 </table>
