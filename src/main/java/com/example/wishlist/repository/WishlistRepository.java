@@ -108,4 +108,26 @@ public class WishlistRepository {
       e.printStackTrace();
     }
   }
+
+  public void makeAWish(Wish wish){
+
+    try {
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      String sql = "INSERT into wishlist (item_name, item_price, item_link, wishlist_id) \n" +
+          "values (?,?,?,?)";
+      PreparedStatement pst = conn.prepareStatement(sql);
+      pst.setString(1,wish.getItem_name());
+      pst.setDouble(2,wish.getItem_price());
+      pst.setString(3, wish.getItem_link());
+      pst.setInt(4,wish.getWishlist_id());
+      pst.executeUpdate();
+
+
+
+    } catch (SQLException e) {
+      System.err.println("Cannot connect");
+      e.printStackTrace();
+    }
+  }
+
 }

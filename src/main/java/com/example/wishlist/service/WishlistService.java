@@ -25,7 +25,7 @@ public class WishlistService {
     return wishlistRepository.fetchAllWishlists();
   }
   public void makeAWish(Wish wish) {
-
+    wishlistRepository.makeAWish(wish);
   }
 
   public List<Wish> findWishesById(int wishlist_id) {
