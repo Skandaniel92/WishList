@@ -18,9 +18,7 @@ public class WishlistRepository {
   private String user;
   @Value("${spring.datasource.password}")
   private String password;
-  //private final String databaseURL = "jdbc:mysql://localhost:3306/christmas_wishlist";
-  //private final String user = "christmas_wishlist_user";
-  //private final String password = "1234";
+
 
   public List<Wish> fetchAllWishes() {
     ArrayList<Wish> wishes = new ArrayList<>();
@@ -107,4 +105,31 @@ public class WishlistRepository {
       e.printStackTrace();
     }
   }
-}
+
+
+  public void addWish(Wish wish){
+    try{
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      String sql = "INSERT INTO wishlist (item_name, item_price, item_link, wishlist_id) VALUES (?, ?, ?, ?)";
+      // WHERE wishlist_id skal være det samme så længe man er inde på den ønskeseddel
+      PreparedStatement pst = conn.prepareStatement(sql);
+      pst.setString(1, wish.getItem_name());
+      pst.setDouble(2, wish.getItem_price());
+      pst.setString(3, wish.getItem_link());
+      pst.setInt(4, wish.getWishlist_id());
+      pst.executeUpdate();
+
+    } catch (SQLException e) {
+      System.err.println("Cannot add wish");
+      e.printStackTrace();
+    }
+  }
+
+
+
+  }
+
+
+
+
+

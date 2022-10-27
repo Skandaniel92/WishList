@@ -58,25 +58,28 @@ WishlistService wishlistService;
     model.addAttribute("wishlists", wishlistService.fetchAllWishlists());
     return "editWishes";
   }
-/*
-  @PostMapping("/makeWish")
-  public String makeWish(@ModelAttribute Wish wish){
-    wishlistService.makeAWish(wish);
-    return "redirect:/showWishes";
-  }
-*/
 
 
   @PostMapping("/addWish/{wishlist_id}")
-  public String makeWish(@ModelAttribute Wish wish, int id){
-    wishlistService.makeAWish(wish);
-    return "redirect:/addWish";
+  public String makeWish(@ModelAttribute Wish wish){
+    wishlistService.addWish(wish);
+    return "redirect:/addWish/" + wish.getWishlist_id();
   }
 
   @GetMapping("/addWish/{wishlist_id}")
   public String showAddWish(@PathVariable("wishlist_id") int wishlist_id, Model model){
     model.addAttribute("wishlist", wishlist_id);
+    model.addAttribute("wishes",wishlistService.findWishesById(wishlist_id));
     return "addWish";
   }
+
+  /*
+  @GetMapping("/addWish/{wishlist_id}")
+  public String showWishesAtAddWishPage(@PathVariable("wishlist_id") int wishlist_id, Model model){
+    model.addAttribute("wishlist", wishlist_id);
+    model.addAttribute("wishes",wishlistService.findWishesById(wishlist_id));
+    return "addWish/{wishlist_id}";
+  }
+*/
 
 }

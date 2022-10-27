@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Add a wish</title>
-    <link rel="stylesheet" th:href="@{styles.css}" href="../static/styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
@@ -11,9 +11,9 @@
 
 <div class="input-form-wishlist">
     <h1>Tilføj et nyt ønske</h1>
-    <form action="/addWish" method="post" th:action="@{/addWish}" th:object="${wish}">
+    <form action="/addWish" method="post" th:action="@{/addWish/{wishlist_id}}">
 
-        <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist_id}">
+        <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist}">
 
         <label for="item_name">Ønskebeskrivelse</label>
         <input id="item_name" name="item_name" type="text" autofocus required>
@@ -22,13 +22,28 @@
         <input id="item_price" name="item_price" type="number">
 
         <label for="item_link">Link</label>
-        <input id="item_link" name="item_link" type="url">
-
-
-
+        <input id="item_link" name="item_link" type="text">
 
         <button type="submit">Tilføj ønske</button>
     </form>
 </div>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:if="${wishes.empty}">
+        <td>Ønskelisten er tom</td>
+    </tr>
+    <tr th:each="w : ${wishes}">
+        <td th:text="${w.item_name}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
