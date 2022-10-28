@@ -63,7 +63,7 @@ public class HomeController {
   @GetMapping("/deleteWish/{wishlist_id}/{item_id}")
   public String showDeleteWish(@PathVariable("item_id") int delete_id, @PathVariable("wishlist_id") int wishlist_id) {
     wishlistService.deleteWishById(delete_id);
-    return "redirect:/showWishes/" + wishlist_id;
+    return "redirect:/addWish/" + wishlist_id;
   }
 
   @GetMapping("/deleteWishlist/{wishlist_id}")

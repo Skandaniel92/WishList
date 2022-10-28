@@ -30,7 +30,7 @@
 
     <table class = "show-wishlist">
         <thead>
-        <tr>
+        <tr th:if="${!wishes.empty}">
             <th>Name</th>
             <th>Pris</th>
             <th>Link</th>
