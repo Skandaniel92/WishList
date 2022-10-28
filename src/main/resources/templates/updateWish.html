@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update wish</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div th:insert="fragments/header_fragment"></div>
+
+<div class="input-form-wishlist">
+    <h1><strong th:text="${wishlist_name}"></strong></h1>
+    <h3>Opdatere ønske</h3>
+
+    <form action="/updateWish" method="post" th:action="@{/updateWish}"  th:object="${wish}">
+
+        <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wish.wishlist_id}">
+        <input id="item_id" name="item_id" type="hidden" required th:value="${wish.item_id}">
+
+
+        <label for="item_name">Ønskebeskrivelse</label>
+        <input id="item_name" name="item_name" type="text" autofocus required th:value="${wish.item_name}">
+
+        <label for="item_price">Pris</label>
+        <input id="item_price" name="item_price" type="number" th:value="${wish.item_price}">
+
+        <label for="item_link">Link</label>
+        <input id="item_link" name="item_link" type="text" th:value="${wish.item_link}">
+
+        <button type="submit">Opdater</button>
+    </form>
+</div>
+</body>
+</html>

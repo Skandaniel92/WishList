@@ -178,4 +178,50 @@ public class WishlistRepository {
     }
     return name;
   }
+
+  public Wish fetchWishById(int update_id) {
+
+    Wish wish = new Wish();
+
+    try {
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      PreparedStatement pst = conn.prepareStatement("SELECT * FROM wishlist where item_id = ?");
+      pst.setInt(1, update_id);
+      ResultSet rs = pst.executeQuery();
+
+      while (rs.next()) {
+        wish.setItem_id(rs.getInt(1));
+        wish.setItem_name(rs.getString(2));
+        wish.setItem_price(rs.getDouble(3));
+        wish.setItem_link(rs.getString(4));
+        wish.setWishlist_id(rs.getInt(5));
+      }
+
+    } catch (SQLException e) {
+      System.err.println("Cannot not update wish");
+      e.printStackTrace();
+    }
+    return wish;
+  }
+
+  public void updateWish(Wish wish) {
+
+    try {
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      String sql = "UPDATE wishlist SET item_name=?, item_price=?, item_link=?, wishlist_id=? WHERE item_id = ?";
+
+      PreparedStatement pst = conn.prepareStatement(sql);
+      pst.setString(1,wish.getItem_name());
+      pst.setDouble(2,wish.getItem_price());
+      pst.setString(3, wish.getItem_link());
+      pst.setInt(4, wish.getWishlist_id());
+      pst.setInt(5, wish.getItem_id());
+
+      pst.executeUpdate();
+
+    } catch (SQLException e) {
+      System.err.println("Cannot update database");
+      e.printStackTrace();
+    }
+  }
 }

@@ -49,4 +49,12 @@ public class WishlistService {
   public String findWishlistNameById(int wishlist_id) {
     return wishlistRepository.fetchWishlistNameById(wishlist_id);
   }
+
+  public Wish fetchWishById(int update_id) {
+    return wishlistRepository.fetchWishById(update_id);
+  }
+
+  public void updateWish(Wish wish) {
+    wishlistRepository.updateWish(wish);
+  }
 }

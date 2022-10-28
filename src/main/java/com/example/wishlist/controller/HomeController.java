@@ -59,16 +59,31 @@ public class HomeController {
     model.addAttribute("wishlist_name", wishlistService.findWishlistNameById(wishlist_id));
     return "addWish";
   }
-
+  // Delete wish
   @GetMapping("/deleteWish/{wishlist_id}/{item_id}")
   public String showDeleteWish(@PathVariable("item_id") int delete_id, @PathVariable("wishlist_id") int wishlist_id) {
     wishlistService.deleteWishById(delete_id);
     return "redirect:/addWish/" + wishlist_id;
   }
 
+  // Delete wishlist
   @GetMapping("/deleteWishlist/{wishlist_id}")
   public String showDeleteWishlist(@PathVariable("wishlist_id") int delete_id) {
     wishlistService.deleteWishlistById(delete_id);
     return "redirect:/editWishes/";
   }
+
+  @GetMapping("/updateWish/{item_id}")
+  public String showUpdateWish(@PathVariable("item_id") int update_id, Model model) {
+    model.addAttribute("wish", wishlistService.fetchWishById(update_id));
+    return "updateWish";
+  }
+
+  @PostMapping("/updateWish")
+  public String updateWish(@ModelAttribute Wish wish) {
+    wishlistService.updateWish(wish);
+    int id = wish.getWishlist_id();
+    return "redirect:/addWish/" + id;
+  }
+
 }
