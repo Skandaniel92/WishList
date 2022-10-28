@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" th:href="@{styles.css}" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <meta charset="UTF-8">
     <title>Dine Julegaveønsker</title>
 </head>
@@ -19,18 +19,16 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Vis ønsker</th>
-                <th>Tilføj ønske</th>
-
+                <th>Vis ønskeliste</th>
+                <th>Slet ønskeliste</th>
             </tr>
             </thead>
 
             <tbody>
             <tr th:each="w : ${wishlists}">
                 <td th:text="${w.wishlist_name}"></td>
-                <td><a th:href="@{'/showWishes/' + ${w.wishlist_id}}"> Vis ønskesedlen</a></td>
-                <td><a th:href="@{'/addWish/' + ${w.wishlist_id}}">Tilføj ønske</a></td>
-
+                <td><a th:href="@{'/addWish/' + ${w.wishlist_id}}">Vis ønskeliste</a></td>
+                <td><a th:href="@{'/deleteWishlist/' + ${w.wishlist_id}}">Slet</a></td>
             </tr>
             </tbody>
         </table>

@@ -10,7 +10,8 @@
 <div th:insert="fragments/header_fragment"></div>
 
 <div class="input-form-wishlist">
-    <h1>Tilføj et nyt ønske</h1>
+    <h1><strong th:text="${wishlist_name}"></strong></h1>
+    <h3>Tilføj et nyt ønske</h3>
     <form action="/addWish" method="post" th:action="@{/addWish/{wishlist_id}}" th:object="${wish}">
 
         <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist_id}">
@@ -27,10 +28,12 @@
         <button type="submit">Tilføj ønske</button>
     </form>
 
-    <table>
+    <table class = "show-wishlist">
         <thead>
         <tr>
             <th>Name</th>
+            <th>Pris</th>
+            <th>Link</th>
         </tr>
         </thead>
 
@@ -40,6 +43,9 @@
         </tr>
         <tr th:each="w : ${wishes}">
             <td th:text="${w.item_name}"></td>
+            <td th:text="${w.item_price}"></td>
+            <td th:text="${w.item_link}"></td>
+            <td><a th:href="@{'/deleteWish/' + ${w.wishlist_id} + '/' + ${w.item_id}}">Slet ønske</a></td>
         </tr>
         </tbody>
     </table>

@@ -127,4 +127,55 @@ public class WishlistRepository {
     }
   }
 
+  public void deleteWish(int delete_id) {
+    try {
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      PreparedStatement pst = conn.prepareStatement("DELETE FROM wishlist WHERE item_id = ?");
+
+      pst.setInt(1,delete_id);
+      pst.executeUpdate();
+    } catch (SQLException e) {
+      System.err.println("Cannot delete this");
+      e.printStackTrace();
+    }
+  }
+
+  public void deleteWishlist(int delete_id) {
+    try {
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      String deleteWishesSql = "DELETE FROM wishlist WHERE wishlist_id = ?";
+      String deleteWishlistSql = "DELETE FROM wishlists WHERE wishlist_id = ?";
+      PreparedStatement pstWishes = conn.prepareStatement(deleteWishesSql);
+      PreparedStatement pstWishlist = conn.prepareStatement(deleteWishlistSql);
+
+      //First delete wishes; then wishlist
+      pstWishes.setInt(1, delete_id);
+      pstWishes.executeUpdate();
+
+      pstWishlist.setInt(1,delete_id);
+      pstWishlist.executeUpdate();
+    } catch (SQLException e) {
+      System.err.println("Cannot delete this");
+      e.printStackTrace();
+    }
+  }
+
+  public String fetchWishlistNameById(int wishlist_id) {
+    String name = "";
+    try {
+      Connection conn = DriverManager.getConnection(databaseURL, user, password);
+      PreparedStatement pst = conn.prepareStatement("SELECT * FROM wishlists where wishlist_id = ?");
+      pst.setInt(1, wishlist_id);
+      ResultSet rs = pst.executeQuery();
+
+      while (rs.next()) {
+        name = rs.getString(2);
+      }
+
+    } catch (SQLException e) {
+      System.err.println("Cannot find wishlist");
+      e.printStackTrace();
+    }
+    return name;
+  }
 }

@@ -38,4 +38,15 @@ public class WishlistService {
     wishlistRepository.addWish(wish);
   }
 
+  public void deleteWishById(int delete_id) {
+    wishlistRepository.deleteWish(delete_id);
+  }
+
+  public void deleteWishlistById(int delete_id) {
+    wishlistRepository.deleteWishlist(delete_id);
+  }
+
+  public String findWishlistNameById(int wishlist_id) {
+    return wishlistRepository.fetchWishlistNameById(wishlist_id);
+  }
 }
