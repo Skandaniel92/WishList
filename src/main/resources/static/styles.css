@@ -35,6 +35,15 @@ section {
 
 }
 
+.wishlist-background{
+    background: url("images/christmas-list.jpg");
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 #inspiration {
   background-color: #442B2D;
 
@@ -54,6 +63,10 @@ section {
     font-size: 25px;
 }
 
+.julegaveheader{
+    justify-content: center;
+}
+
 nav > ul {
     display: flex;
     flex-direction: row;
@@ -62,6 +75,8 @@ nav > ul {
 
 .left-header a, nav.menu a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 /*left-header nav ul li a*/
 
