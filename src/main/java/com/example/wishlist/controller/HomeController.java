@@ -89,7 +89,7 @@ public class HomeController {
   // Guest pages
 
   @GetMapping("/showWishListsGuest")
-  public String showWishListGuest(Model model) {
+  public String showWishListsGuest(Model model) {
     model.addAttribute("wishlists", wishlistService.fetchAllWishlists());
     return "showWishListsGuest";
   }
