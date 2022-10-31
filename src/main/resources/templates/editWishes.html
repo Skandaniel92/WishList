@@ -28,7 +28,7 @@
                 <tr th:each="w : ${wishlists}">
                     <td th:text="${w.wishlist_name}"></td>
                     <td><a th:href="@{'/addWish/' + ${w.wishlist_id}}">Vis ønskeliste</a></td>
-                    <td><a th:href="@{'/deleteWishlist/' + ${w.wishlist_id}}">Slet</a></td>
+                    <td><a th:href="@{'/deleteWishlist/' + ${w.wishlist_id}}"><img src="/images/delete.png" height="30px" width="30px" alt="Picture: delete symbol"></a></td>
                 </tr>
                 </tbody>
             </table>
