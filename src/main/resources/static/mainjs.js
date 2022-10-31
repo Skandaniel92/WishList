@@ -1,12 +1,12 @@
 /*funktion til input for listesøgning*/
 /* https://www.w3schools.com/howto/howto_js_filter_table.asp */
 
-function myFunction() {
+function searchFunction() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
+    table = document.getElementById("mySearchTable");
     tr = table.getElementsByTagName("tr");
 
     // Loop through all table rows, and hide those who don't match the search query

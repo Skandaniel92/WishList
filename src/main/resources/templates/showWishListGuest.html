@@ -10,14 +10,14 @@
 
 <section class="wishlist-background">
 
-    <div th:insert="fragments/header_fragment"></div>
+    <div th:insert="fragments/header-fragment"></div>
 
     <div class="wishlist-main-frame">
         <h1><strong th:text="${wishlist_name}"></strong></h1>
 
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Søg i listen">
+        <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Søg i listen">
         <div class="wishlist-box">
-            <table class="wishlist-table" id="myTable">
+            <table class="wishlist-table" id="mySearchTable">
 
                 <thead>
                 <tr th:if="${!wishes.empty}">
