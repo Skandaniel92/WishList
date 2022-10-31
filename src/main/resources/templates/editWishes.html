@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/styles.css">
     <meta charset="UTF-8">
     <title>Dine Julegaveønsker</title>
+    <script src="/mainjs.js"></script>
 </head>
 <body>
 
@@ -14,8 +15,10 @@
         <div>
             <a class="create-wish-btn" th:href="@{showCreateWishList}" style="color: black"> Tilføj en ny ønskeliste</a>
         </div>
+
         <div class="wishlist-box">
-            <table class="wishlist-table">
+            <table class="wishlist-table" id="mySearchTable">
+                <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg en ønskeliste">
                 <thead>
                 <tr>
                     <th>Name</th>
