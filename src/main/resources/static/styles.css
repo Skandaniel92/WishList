@@ -187,6 +187,23 @@ tr:hover > td {
     padding-top: 100px;
 }
 
+#kontakt {
+    background-color: grey;
+}
+
+.footer-style{
+}
+
+footer img {
+    height: 80px;
+    width: auto;
+}
+@media all and (max-width: 400px){
+    footer img {
+        height: 30px;
+    }
+}
+
 
 /*Style for input til søgning*/
 /* https://www.w3schools.com/howto/howto_js_filter_table.asp */
