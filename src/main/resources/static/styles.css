@@ -153,12 +153,12 @@ a:visited {
 
 /* Appearance of wishlist table */
 
-#wishlist-table {
+.wishlist-table {
     border-collapse: collapse;
     border: 2px solid black;
 }
 
-#wishlist-box {
+.wishlist-box {
     padding-top: 20px;
 }
 
@@ -172,7 +172,7 @@ tr:hover > td {
     background-color: mediumaquamarine;
 }
 
-#wishlist-main-frame {
+.wishlist-main-frame {
     display: grid;
     justify-content: center;
     padding-top: 200px;

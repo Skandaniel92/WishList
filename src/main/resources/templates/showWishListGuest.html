@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a wish</title>
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+
+<section class="wishlist-background">
+
+    <div th:insert="fragments/header_fragment"></div>
+
+    <div class="wishlist-main-frame">
+        <h1><strong th:text="${wishlist_name}"></strong></h1>
+
+        <div class="wishlist-box">
+            <table class="wishlist-table">
+                <thead>
+                <tr th:if="${!wishes.empty}">
+                    <th>Name</th>
+                    <th>Pris</th>
+                    <th>Link</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:if="${wishes.empty}">
+                    <td>Ønskelisten er tom</td>
+                </tr>
+                <tr th:each="w : ${wishes}">
+                    <td th:text="${w.item_name}"></td>
+                    <td th:text="${w.item_price}"></td>
+                    <td><a th:href="${w.item_link}" target="_blank"> Link </a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>

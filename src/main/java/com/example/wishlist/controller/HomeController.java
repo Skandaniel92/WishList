@@ -86,4 +86,20 @@ public class HomeController {
     return "redirect:/addWish/" + id;
   }
 
+  // Guest pages
+
+  @GetMapping("/showWishListsGuest")
+  public String showWishListGuest(Model model) {
+    model.addAttribute("wishlists", wishlistService.fetchAllWishlists());
+    return "showWishListsGuest";
+  }
+
+  @GetMapping("/showWishListGuest/{wishlist_id}")
+  public String showWishListGuest(@PathVariable("wishlist_id") int wishlist_id, Model model) {
+    model.addAttribute("wishlist", wishlist_id);
+    model.addAttribute("wishes", wishlistService.findWishesById(wishlist_id));
+    model.addAttribute("wishlist_name", wishlistService.findWishlistNameById(wishlist_id));
+    return "showWishListGuest";
+  }
+
 }

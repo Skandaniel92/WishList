@@ -25,7 +25,7 @@
     <tr th:each="w : ${wishes}">
         <td th:text="${w.item_name}"></td>
         <td th:text="${w.item_price}"></td>
-        <td th:text="${w.item_link}"></td>
+        <td> <a th:href="${w.item_link}" target="_blank">Link</a></td>
         <td><a th:href="@{'/deleteWish/' + ${w.wishlist_id} + '/' + ${w.item_id}}">Slet ønske</a></td>
     </tr>
     </tbody>
