@@ -186,6 +186,12 @@ tr:hover > td {
     justify-content: center;
 }
 
+.sebastians-showWishlists-guest{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
 .input-form-wishlist{
     padding-top: 100px;
     margin: 20px;

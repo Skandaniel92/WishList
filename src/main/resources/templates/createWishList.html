@@ -8,14 +8,15 @@
 <body>
 
 <div th:insert="fragments/header-fragment"></div>
-
-<div class="input-form-wishlist">
-    <h1>Lav en ny ønskeliste</h1>
-    <form action="/createWishList" method="post" th:action="@{/createWishList}" th:object="${wishList}">
-        <label for="wishlist_name">Ønskelistens navn </label>
-        <input id="wishlist_name" name="wishlist_name" type="text" autofocus required>
-        <button type="submit"> opret ønskeliste </button>
-    </form>
-</div>
+<section class="wishlist-background">
+    <div class="input-form-wishlist">
+        <h1>Lav en ny ønskeliste</h1>
+        <form action="/createWishList" method="post" th:action="@{/createWishList}" th:object="${wishList}">
+            <label for="wishlist_name">Ønskelistens navn </label>
+            <input id="wishlist_name" name="wishlist_name" type="text" autofocus required>
+            <button type="submit"> opret ønskeliste</button>
+        </form>
+    </div>
+</section>
 </body>
 </html>
