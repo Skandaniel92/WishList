@@ -11,7 +11,6 @@
 <section class="wishlist-background">
 
 <div th:insert="fragments/header-fragment"></div>
-
 <div class="input-form-wishlist">
     <h1><strong th:text="${wishlist_name}"></strong></h1>
     <h3>Tilføj et nyt ønske</h3>
@@ -30,8 +29,8 @@
 
         <button type="submit">Tilføj ønske</button>
     </form>
-
-    <table class = "show-wishlist">
+<div class="wishlist-main-frame">
+    <table class = "wishlist-table">
         <thead>
         <tr th:if="${!wishes.empty}">
             <th>Name</th>
@@ -56,6 +55,7 @@
         </tr>
         </tbody>
     </table>
+</div>
 </div>
 </section>
 </body>

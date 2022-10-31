@@ -160,6 +160,7 @@ a:visited {
 .wishlist-table {
     border-collapse: collapse;
     border: 2px solid black;
+    padding-top: 50px;
 }
 
 .wishlist-box {
@@ -177,9 +178,12 @@ tr:hover > td {
 }
 
 .wishlist-main-frame {
+    padding-top: 50px;
+}
+
+.wishlist-main-frame-guest {
     display: grid;
     justify-content: center;
-    padding-top: 200px;
 }
 
 .input-form-wishlist{

@@ -2,8 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add a wish</title>
+    <title th:text="${wishlist_name}"></title>
     <link rel="stylesheet" href="/styles.css">
+
+<!-- Tommy roder lige fra her -->
+
+    <!-- Til her -->
+
     <script src="/mainjs.js"> </script>
 </head>
 <body>
@@ -12,7 +17,7 @@
 
     <div th:insert="fragments/header-fragment"></div>
 
-    <div class="wishlist-main-frame">
+    <div class="wishlist-main-frame wishlist-main-frame-guest">
         <h1><strong th:text="${wishlist_name}"></strong></h1>
 
         <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Søg i listen">
@@ -24,6 +29,7 @@
                     <th>Name</th>
                     <th>Pris</th>
                     <th>Link</th>
+                    <th>Copy</th>
                 </tr>
                 </thead>
 
@@ -35,6 +41,9 @@
                     <td th:text="${w.item_name}"></td>
                     <td th:text="${w.item_price}"></td>
                     <td><a th:href="${w.item_link}" target="_blank"> Link </a></td>
+                    <td><input type="text" th:value="${w.item_link}" id="copyLink">
+                        <button th:value="${w.item_link}" onclick="myCopyLink()">Copy text</button>
+                    </td>
                 </tr>
                 </tbody>
             </table>

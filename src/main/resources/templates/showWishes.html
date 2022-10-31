@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL, SyntaxError -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="/styles.css">
@@ -9,7 +10,7 @@
 
 <div th:insert="fragments/header-fragment"></div>
 
-<table class = "show-wishlist">
+<table class = "wishlist-table">
     <thead>
     <tr>
         <th>Name</th>
@@ -19,6 +20,7 @@
     </thead>
 
     <tbody>
+    <!--suppress SyntaxError -->
     <tr th:if="${wishes.empty}">
         <td>Ønskelisten er tom</td>
     </tr>
