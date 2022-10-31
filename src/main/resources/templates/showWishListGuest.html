@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Add a wish</title>
     <link rel="stylesheet" href="/styles.css">
-
+    <script src="/mainjs.js"> </script>
 </head>
 <body>
 
@@ -15,8 +15,10 @@
     <div class="wishlist-main-frame">
         <h1><strong th:text="${wishlist_name}"></strong></h1>
 
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Søg i listen">
         <div class="wishlist-box">
-            <table class="wishlist-table">
+            <table class="wishlist-table" id="myTable">
+
                 <thead>
                 <tr th:if="${!wishes.empty}">
                     <th>Name</th>
