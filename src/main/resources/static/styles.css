@@ -161,11 +161,27 @@ a:visited {
     border-collapse: collapse;
     border: 2px solid black;
     padding-top: 50px;
+    font-size: 0.9em;
+    min-width: 400px;
+    /* For at få buede kanter*/
+    border-radius: 15px;
+    /*border-radius: 5px 5px 0 0;*/
+    overflow: hidden;
+    /*box-shadow: 0 0 3px white;*/
+}
+
+.search-wishlist {
+    padding-top: 30px;
 }
 
 .wishlist-box {
-    padding-top: 20px;
+    padding-top: 30px;
 }
+
+.wishlist-table td, .wishlist-table tr th{
+    text-align: center;
+}
+
 
 td, th {
     padding: 15px;
@@ -177,9 +193,13 @@ tr:hover > td {
     background-color: mediumaquamarine;
 }
 
-.wishlist-main-frame {
-    padding-top: 50px;
+
+.editWishes-table {
+    padding-top: 8em;
+    margin-left: 2em;
 }
+
+
 
 .wishlist-main-frame-guest {
     display: grid;
@@ -214,6 +234,9 @@ footer img {
     height: 100px;
     width: auto;
 }
+
+
+
 @media all and (max-width: 600px){
     footer img {
         height: 30px;

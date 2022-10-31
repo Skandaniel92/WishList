@@ -10,15 +10,21 @@
 
 
 <div th:insert="fragments/header-fragment"></div>
+
 <section class="wishlist-background">
-    <div class="wishlist-main-frame">
+
+    <div class="editWishes-table">
         <div>
-            <a class="create-wish-btn" th:href="@{showCreateWishList}" style="color: black"> Tilføj en ny ønskeliste</a>
+            <a class="create-wish-btn" th:href="@{showCreateWishList}" style="color: black"><button>Tilføj en ny ønskeliste</button></a>
         </div>
+
+       <div class="search-wishlist">
+           <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg en ønskeliste    ">
+       </div>
 
         <div class="wishlist-box">
             <table class="wishlist-table" id="mySearchTable">
-                <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg en ønskeliste">
+
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -31,11 +37,13 @@
                 <tr th:each="w : ${wishlists}">
                     <td th:text="${w.wishlist_name}"></td>
                     <td><a th:href="@{'/addWish/' + ${w.wishlist_id}}">Vis ønskeliste</a></td>
-                    <td><a th:href="@{'/deleteWishlist/' + ${w.wishlist_id}}"><img src="/images/delete.png" height="30px" width="30px" alt="Picture: delete symbol"></a></td>
+                    <td><a th:href="@{'/deleteWishlist/' + ${w.wishlist_id}}"><img src="/images/delete.png" id="delete-logo" height="30px" width="30px" alt="Picture: delete symbol"></a></td>
                 </tr>
                 </tbody>
             </table>
         </div>
+    </div>
+    </div>
     </div>
 </section>
 </body>
