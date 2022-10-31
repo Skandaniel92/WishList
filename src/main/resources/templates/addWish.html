@@ -48,8 +48,8 @@
             <td th:text="${w.item_name}"></td>
             <td th:text="${w.item_price}"></td>
             <td> <a th:href="${w.item_link}" target="_blank" > Link </a> </td>
-            <td><a th:href="@{'/updateWish/' + ${w.item_id}}">Opdater ønske</a></td>
-            <td><a th:href="@{'/deleteWish/' + ${w.wishlist_id} + '/' + ${w.item_id}}">Slet ønske</a></td>
+            <td><a th:href="@{'/updateWish/' + ${w.item_id}}"><img src="/images/edit.png" height="20px" width="20px" alt="Picture: edit symbol"></a></td>
+            <td><a th:href="@{'/deleteWish/' + ${w.wishlist_id} + '/' + ${w.item_id}}"><img src="/images/delete.png" height="30px" width="30px" alt="Picture: delete symbol"></a></td>
         </tr>
         </tbody>
     </table>
