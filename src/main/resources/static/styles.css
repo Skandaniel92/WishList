@@ -192,15 +192,21 @@ tr:hover > td {
 }
 
 .footer-style{
+    text-align: center;
+    margin: 10px 15px;
 }
 
 footer img {
-    height: 80px;
+    height: 100px;
     width: auto;
 }
-@media all and (max-width: 400px){
+@media all and (max-width: 600px){
     footer img {
         height: 30px;
+    }
+
+    .menu {
+        font-size: 15px;
     }
 }
 
