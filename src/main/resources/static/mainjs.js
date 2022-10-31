@@ -1,3 +1,6 @@
+/*funktion til input for listesøgning*/
+/* https://www.w3schools.com/howto/howto_js_filter_table.asp */
+
 function myFunction() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
