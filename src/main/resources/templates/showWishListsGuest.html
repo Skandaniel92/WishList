@@ -8,33 +8,40 @@
 </head>
 <body>
 
-
 <div th:insert="fragments/header-fragment"></div>
-<section class="wishlist-background sebastians-showWishlists-guest">
 
-    <h1> Ønskelister</h1>
-    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Søg i ønskelisterne">
-        <div class="wishlist-box">
-            <table class="wishlist-table" id="mySearchTable">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Vis ønskeliste</th>
-                </tr>
-                </thead>
+<section class="wishlist-background editWishes-marcus">
+    <div class="marcus-box-tabel">
+        <h1>Ønskelister</h1>
+        <div class="editWishes-table">
 
-                <tbody>
-                <tr th:each="w : ${wishlists}">
-                    <td th:text="${w.wishlist_name}"></td>
-                    <td><a th:href="@{'/showWishListGuest/' + ${w.wishlist_id}}">Vis ønskeliste</a></td>
-                </tr>
-                </tbody>
-            </table>
-            <form>
-                <input type="button" value="Tilbage" onclick="history.back()">
-            </form>
+            <div class="search-wishlist">
+                <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg en ønskeliste    ">
+            </div>
+
+            <div class="wishlist-box scrollable">
+                <table class="wishlist-table" id="mySearchTable">
+
+                    <thead>
+                    <tr>
+                        <th>Navn</th>
+                        <th>Vis ønskeliste</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each="w : ${wishlists}">
+                        <td th:text="${w.wishlist_name}"></td>
+                        <td><a th:href="@{'/showWishListGuest/' + ${w.wishlist_id}}">Vis ønskeliste</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
+    </div>
+    <br>
+    <input type="button" value="Tilbage" onclick="history.back()">
 </section>
+
 </body>
 </html>
