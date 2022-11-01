@@ -12,38 +12,47 @@
         <div class="left-header"><a href="/"><img src="images/titel-logo.png"><img src="images/julesok.png"></a></div>
         <nav class="menu">
             <ul>
-            <li> <a href="#omos">Om os</a></li>
-            <li> <a href="#kontakt">Kontakt</a></li>
+                <li><a href="#omos">Om os</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </nav>
+
     </header>
 
+    <div class="test">
 
+        <div class="links-container-section">
+            <div></div>
+            <div class="links-section"><a th:href="@{'editWishes'}">Bruger</a></div>
+            <div class="links-section"><a th:href="@{'showWishListsGuest'}">Gæst</a></div>
+            <div></div>
+        </div>
 
-    <div class="links-container-section">
+        <div class="tekst-container">
+            <div class="tekst-section"><p>Den nemmeste måde at lave <br>og dele din
+                ønskeliste på</p></div>
+        </div>
 
-        <div class="links-section"> <a th:href = "@{'editWishes'}">Bruger</a></div>
-
-    <div class="links-section"> <a th:href = "@{'showWishListsGuest'}">Gæst</a></div>
-
+        <div class="julekugle-section"><img src="images/julekugle.png"></div>
     </div>
 
-    <div class="tekst-section"> <p style="position: absolute">Den nemmeste måde at lave <br>og dele din
-    ønskeliste på</p></div>
-    <div class="julekugle-section"><img src="images/julekugle.png"></div>
+
 
 </section>
+
+
 
 <div class="menu-pages">
 
     <section id="omos" class="background-om-os">
         <h1>Hej, vi er hovederne bag Juleønskeskyen</h1>
         <div class="om-os-textbox">
-           Vi er en gruppe studerende fra datamatikeruddannelsen på KEA, som i efteråret 2022 kom på idéen om at lave
+            Vi er en gruppe studerende fra datamatikeruddannelsen på KEA, som i efteråret 2022 kom på idéen om at lave
             en helt egen Juleønskesky, der vi kunne lave ønskesedler og dele de med familie og venner.
             <br>
             <br>
-            Konceptet er enkelt, men genialt, da vi selv godt kan lide at specificere ønsket med en link, sådan at det er den
+            Konceptet er enkelt, men genialt, da vi selv godt kan lide at specificere ønsket med en link, sådan at det
+            er den
             helt rigtige version der kommer frem til Julemanden.
             <br>
             <br>
@@ -64,7 +73,7 @@
 </div>
 
 <footer>
-  <div th:insert="fragments/footer-fragment"> </div>
+    <div th:insert="fragments/footer-fragment"></div>
 </footer>
 
 </body>

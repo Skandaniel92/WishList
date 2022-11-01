@@ -124,15 +124,20 @@ li {
 
 /* ------------------------ */
 
+.test{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%; /*var 100 %*/
+    justify-content: center;
+    top: 45%;
+    position: relative;
+}
 
 .links-container-section{
-
     display: flex;
     width: 100%; /*var 100 %*/
     justify-content: space-around;
     position: absolute;
-    top: 50%;
-
 }
 
 .links-section{
@@ -145,30 +150,40 @@ li {
     text-align: center;
 }
 
+.links-section a {
+    color: white;
+    text-decoration: none;
+}
+
 .links-section:hover{
     color: red;
     font-style: italic;
 }
 
-.tekst-section{
-    position: relative;
-    top: 60%;
+.tekst-container{
     display: flex;
+    width: 100%; /*var 100 %*/
     justify-content: center;
+    padding-top: 50px;
+}
+
+.tekst-section{
     color: white;
     font-size: 25px;
     font-weight: bold;
-    font-style: italic
+    font-style: italic;
+    display: flex;
+    width: 100%; /*var 100 %*/
+    justify-content: center;
+    position: relative;
+    text-align: center;
 }
 
 .julekugle-section{
-    position: relative;
-    top: 75%;
-    display: flex;
-    justify-content: center;
-
-
+    text-align: center;
+    width: 100%; /*var 100 %*/
 }
+
 
 #inspiration, #kontakt, #omos{
     padding-top: 100px;
@@ -196,6 +211,7 @@ li {
 /* Colour of visited links remain white */
 a:visited {
     color: red;
+
 }
 
 /* Appearance of wishlist table */
@@ -208,7 +224,9 @@ a:visited {
     min-width: 400px;
     /* For at få buede kanter*/
     border-radius: 15px;
+    /*border-radius: 5px 5px 0 0;*/
     overflow: hidden;
+    /*box-shadow: 0 0 3px white;*/
 }
 
 .search-wishlist {
