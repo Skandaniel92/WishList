@@ -58,6 +58,14 @@ section {
     background-size: cover;
 }
 
+.background-om-os{
+    background: url("images/om-os.jpg");
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 #inspiration {
   background-color: #442B2D;
@@ -175,7 +183,7 @@ li {
 }
 
 #omos {
-    width: 400px;
+    width: 100%;
     font-size: 1em;
     border: black;
     font-family: "Arial";
