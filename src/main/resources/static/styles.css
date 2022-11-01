@@ -198,8 +198,44 @@ tr:hover > td {
     padding-top: 8em;
     margin-left: 2em;
 }
+.wishlist-main-frame {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+}
+
+.daniels-box-tabel{
+    display: grid;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.wishlist-table-daniel {
+    border-collapse: collapse;
+    border: 2px solid red;
+    padding-top: 50px;
+    border-radius: 15px;
+    overflow: hidden;
+}
 
 
+
+.daniels-box-tabel input{
+    border-radius: 5px;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
+
+
+.daniels-box-tabel h1 {text-align: center}
 
 .wishlist-main-frame-guest {
     display: grid;
