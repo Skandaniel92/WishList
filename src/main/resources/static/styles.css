@@ -43,6 +43,14 @@ section {
     background-size: cover;
 }
 
+.background-add-wish {
+    background: url("images/christmas-list.jpg");
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 #inspiration {
   background-color: #442B2D;
@@ -254,8 +262,57 @@ tr:hover > td {
     margin: 20px;
 }
 
+.input-form-wishlist-add-wish {
+    /*padding-top: 100px;*/
+}
+
+.add-wish-table-and-search-wrapper {
+    display: grid;
+    justify-items: end;
+    margin: 20px;
+}
+
+.add-wish-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 70px;
+    /*align-content: start;*/
+}
+
+.add-wish-title-header {
+    display: grid;
+    justify-items: center;
+    padding-top: 100px;
+    margin: 20px;
+
+}
+
+.add-wish-search-bar {
+    display: grid;
+    justify-content: right;
+    align-content: start;
+    height: 50px;
+}
+
+.add-wish-left {
+    display: grid;
+    justify-content: end;
+}
+
+.add-wish-right {
+    display: grid;
+    justify-content: start;
+    align-content: start;
+}
+
+.add-wish-empty-box {
+    width: 50%;
+    height: 50px;
+}
+
+
 .show-wishlist {
-    padding-top: 50px;
+    /*padding-top: 50px;*/
 }
 
 #kontakt {
