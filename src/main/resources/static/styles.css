@@ -1,7 +1,7 @@
 
 
 body {
-    animation: fadeInAnimation ease 5s;
+    animation: fadeInAnimation ease 4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -13,6 +13,7 @@ body {
     100% {
         opacity: 1;
     }
+
 }
 
 
@@ -26,7 +27,7 @@ section {
 }
 
 
-.index-top-container{
+.index-top-container {
     background: url("images/julebillede.jpeg");
     background-position: center;
     height: 100%;
@@ -34,6 +35,7 @@ section {
     background-size: cover;
 
 }
+
 
 .wishlist-background{
     background: url("images/christmas-list.jpg");
@@ -101,13 +103,15 @@ li {
 
 /* ------------------------ */
 
+
 .links-container-section{
 
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+    width: 100%; /*var 100 %*/
+    justify-content: space-around;
     position: absolute;
     top: 50%;
+
 }
 
 .links-section{
@@ -149,6 +153,24 @@ li {
     padding-top: 100px;
     padding-left: 40px;
 }
+
+/*---------- Om os --------------*/
+.om-os-textbox {
+    width: 400px;
+    font-size: 1em;
+    border: black;
+}
+
+#omos {
+    width: 400px;
+    font-size: 1em;
+    border: black;
+    font-family: "Arial";
+
+}
+
+
+/*----------------------------------------*/
 
 /* Colour of visited links remain white */
 a:visited {
@@ -193,6 +215,11 @@ tr:hover > td {
     background-color: mediumaquamarine;
 }
 
+.marcus-box-tabel{
+    top: 30%;
+    justify-content: center;
+    border-radius: 15px;
+}
 
 .editWishes-table {
     padding-top: 8em;

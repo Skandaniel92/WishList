@@ -1,7 +1,7 @@
 package com.example.wishlist.controller;
 
-import com.example.wishlist.service.model.Wish;
-import com.example.wishlist.service.model.WishList;
+import com.example.wishlist.model.Wish;
+import com.example.wishlist.model.WishList;
 import com.example.wishlist.service.WishlistService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HomeController {
 
-  WishlistService wishlistService;
+  private WishlistService wishlistService;
 
   public HomeController(WishlistService ws) {
     wishlistService = ws;
@@ -47,7 +47,7 @@ public class HomeController {
 
 
   @PostMapping("/addWish/{wishlist_id}")
-  public String makeWish(@ModelAttribute Wish wish) {
+  public String addWish(@ModelAttribute Wish wish) {
     wishlistService.addWish(wish);
     return "redirect:/addWish/" + wish.getWishlist_id();
   }

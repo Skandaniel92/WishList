@@ -1,4 +1,4 @@
-package com.example.wishlist.service.model;
+package com.example.wishlist.model;
 
 public class Wish {
   private int item_id;
