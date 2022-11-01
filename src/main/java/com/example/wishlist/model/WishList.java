@@ -1,4 +1,4 @@
-package com.example.wishlist.service.model;
+package com.example.wishlist.model;
 
 import java.util.List;
 

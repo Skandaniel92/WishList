@@ -24,14 +24,13 @@
 
         <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Søg i listen">
         <div class="wishlist-box">
-            <table class="wishlist-table-daniel">
+            <table class="wishlist-table-daniel" id="mySearchTable">
 
                 <thead>
                 <tr th:if="${!wishes.empty}">
                     <th>Name</th>
                     <th>Pris</th>
                     <th>Link</th>
-                    <th>Copy</th>
                 </tr>
                 </thead>
 
@@ -43,9 +42,6 @@
                     <td th:text="${w.item_name}"></td>
                     <td th:text="${w.item_price}"></td>
                     <td><a th:href="${w.item_link}" target="_blank"><img src="/images/link-logo.png" height="20px"></a></td>
-                    <td><input type="text" th:value="${w.item_link}" id="copyLink">
-                        <button th:value="${w.item_link}" onclick="myCopyLink()">Copy text</button>
-                    </td>
                 </tr>
                 </tbody>
             </table>

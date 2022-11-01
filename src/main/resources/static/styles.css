@@ -246,6 +246,7 @@ tr:hover > td {
     display: grid;
     justify-content: center;
     align-content: center;
+    text-align: center;
 }
 
 .input-form-wishlist{
