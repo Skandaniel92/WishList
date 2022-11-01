@@ -21,9 +21,11 @@
     <div class="daniels-box-tabel">
 
         <h1><strong th:text="${wishlist_name}"></strong></h1>
-
+        <form style="align-self: center">
+            <input type="button" value="Tilbage" onclick="history.back()">
+        </form> <br><br>
         <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Søg i listen">
-        <div class="wishlist-box">
+        <div class="wishlist-box scrollable">
             <table class="wishlist-table-daniel" id="mySearchTable">
 
                 <thead>
@@ -44,7 +46,9 @@
                     <td><a th:href="${w.item_link}" target="_blank"><img src="/images/link-logo.png" height="20px"></a></td>
                 </tr>
                 </tbody>
+
             </table>
+
         </div>
     </div>
 

@@ -369,3 +369,11 @@ footer img {
 }
 
 
+/*seb forsøg*/
+.scrollable {
+    height: 250px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ddd;
+
+}
+
