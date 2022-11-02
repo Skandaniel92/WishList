@@ -67,10 +67,6 @@ section {
 }
 
 
-#inspiration {
-  background-color: #442B2D;
-
-}
 
 
 .header-top{
@@ -80,15 +76,12 @@ section {
     grid-template-columns: 2fr 1fr;
     height: 90px;
     align-content: center;
-    position: fixed;
     top: 0;
+    position: absolute;
     width: 100%;
     font-size: 25px;
 }
 
-.header-top-fragment{
-    position: absolute;
-}
 
 .fragment-header {
 
@@ -104,6 +97,7 @@ nav > ul {
     text-decoration: none;
     display: flex;
     align-items: center;
+    color: red;
 }
 /*left-header nav ul li a*/
 
@@ -192,16 +186,15 @@ li {
 
 /*---------- Om os --------------*/
 .om-os-textbox {
+    display: flex;
     width: 400px;
     font-size: 1em;
     border: black;
+    justify-items: flex-end;
 }
 
 #omos {
-    width: 100%;
     font-size: 1em;
-    border: black;
-    font-family: "Arial";
 
 }
 
@@ -384,7 +377,27 @@ tr:hover > td {
 }
 
 #kontakt {
-    background-color: grey;
+    background: url("images/kontakt_billede.jpeg");
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: azure;
+}
+
+.kontakt-text {
+    width: 400px;
+    font-size: 2vw; /* 2vw = 2 % of viewport width */
+    max-width: 400px;
+    min-font-size: 2vw;
+
+}
+
+
+
+
+.kontakt-text a {
+    color: azure;
 }
 
 .footer-style{
@@ -406,6 +419,10 @@ footer img {
 
     .menu {
         font-size: 15px;
+    }
+
+    .kontakt-text {
+        font-size: 45px; /* 2vw = 2 % of viewport width */
     }
 }
 
