@@ -64,6 +64,8 @@ section {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    display: grid;
+    grid-template-columns: 35% 50% 15%;
 }
 
 
@@ -179,18 +181,18 @@ li {
 }
 
 
-#inspiration, #kontakt, #omos{
-    padding-top: 100px;
-    padding-left: 40px;
+#kontakt, #omos{
+    /*padding-top: 100px;*/
+    /*padding-left: 40px;*/
 }
 
 /*---------- Om os --------------*/
 .om-os-textbox {
-    display: flex;
-    width: 400px;
+    padding-top: 25%;
+    display: grid;
+    grid-template-rows: 15% 85%;
     font-size: 1em;
     border: black;
-    justify-items: flex-end;
 }
 
 #omos {
@@ -435,3 +437,6 @@ footer img {
 
 }
 
+.button-smooth {
+
+}

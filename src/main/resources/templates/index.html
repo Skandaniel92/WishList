@@ -11,7 +11,7 @@
 
     <div th:insert="fragments/header-fragment"></div>
 
-    <div class="test">
+    <div class="test" id="top">
 
         <div class="links-container-section">
             <div></div>
@@ -37,9 +37,13 @@
 <div class="menu-pages">
 
     <section id="omos" class="background-om-os">
-        <h1>Hej, vi er hovederne bag Juleønskeskyen</h1>
+        <div class="button-smooth">
+            <input type="button" value="Til toppen" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        </div>
         <div class="om-os-textbox">
-            Vi er en gruppe studerende fra datamatikeruddannelsen på KEA, som i efteråret 2022 kom på idéen om at lave
+            <div><h1>Hej, vi er hovederne bag Juleønskeskyen</h1></div>
+
+            <div>Vi er en gruppe studerende fra datamatikeruddannelsen på KEA, som i efteråret 2022 kom på idéen om at lave
             en helt egen Juleønskesky, der vi kunne lave ønskesedler og dele de med familie og venner.
             <br>
             <br>
@@ -52,8 +56,10 @@
             <br>
             <br>
             Julehilsen fra Tommy, Daniel, Sebastian og Marcus
+            </div>
 
         </div>
+        <div></div>
     </section>
 
     <section id="kontakt" >
