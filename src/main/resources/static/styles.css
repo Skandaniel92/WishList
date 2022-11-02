@@ -342,6 +342,68 @@ tr:hover > td {
     /*align-content: start;*/
 }
 
+/* add-wish done responsive */
+@media all and (max-width: 601px) {
+    .add-wish-container {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        direction: rtl;
+        row-gap: 30px;
+    }
+
+    .add-wish-container > div {
+        direction: ltr;
+    }
+
+    .add-wish-container, .add-wish-container > div {
+        transform: rotate(180deg);
+    }
+
+    .add-wish-empty-box {
+        display: none;
+    }
+
+    .add-wish-search-bar {
+        display: grid;
+        justify-self: center;
+    }
+
+    .add-wish-left {
+        display: grid;
+        /*row-gap: 50px;*/
+    }
+
+    #myInput {
+        font-size: 30px;
+    }
+
+    .input-form-wishlist-add-wish > input, #item_name, #item_price, #item_link {
+        font-size: 30px;
+
+    }
+
+    .input-form-wishlist-add-wish > input, button {
+        font-size: 30px;
+    }
+
+    .input-form-wishlist-add-wish > input, label {
+        /*display: none;*/
+    }
+
+    .input-form-wishlist-add-wish > h3 {
+        font-size: 30px;
+    }
+
+    .add-wish-title-header > h1 {
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+
+
+}
+
 .add-wish-title-header {
     display: grid;
     justify-items: center;

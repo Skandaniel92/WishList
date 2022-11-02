@@ -57,9 +57,8 @@
                     <form action="/addWish" method="post" th:action="@{/addWish/{wishlist_id}}" th:object="${wish}">
 
                         <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist_id}">
-
                         <label for="item_name">Ønskebeskrivelse:</label><br>
-                        <input id="item_name" name="item_name" type="text" autofocus required><br>
+                        <input id="item_name" name="item_name" type="text" placeholder="" autofocus required><br>
 
                         <label for="item_price">Pris:</label><br>
                         <input id="item_price" name="item_price" type="number"><br>
