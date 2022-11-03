@@ -8,8 +8,8 @@
 </head>
 <body>
 
-
-<div th:insert="fragments/header-fragment"></div>
+<div class="top-container">
+    <div th:insert="fragments/header-fragment"></div>
 
 <section class="wishlist-background editWishes-marcus">
 <div class="marcus-box-tabel">
@@ -49,6 +49,7 @@
     <button class="alt-back-btn-user"><a th:href="@{'/'}" style="text-decoration: none">Tilbage </a></button>
 
 </section>
+</div>
 
 <footer>
     <div th:replace="fragments/footer-fragment"></div>

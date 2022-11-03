@@ -7,42 +7,44 @@
     <script src="/mainjs.js"></script>
 </head>
 <body>
+<div class="top-container">
+    <div th:insert="fragments/header-fragment"></div>
 
-<div th:insert="fragments/header-fragment"></div>
+    <section class="wishlist-background editWishes-marcus">
+        <div class="marcus-box-tabel">
+            <h1>Ønskelister</h1>
+            <div class="editWishes-table">
 
-<section class="wishlist-background editWishes-marcus">
-    <div class="marcus-box-tabel">
-        <h1>Ønskelister</h1>
-        <div class="editWishes-table">
+                <div class="search-wishlist">
+                    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg en ønskeliste    ">
+                </div>
 
-            <div class="search-wishlist">
-                <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg en ønskeliste    ">
-            </div>
+                <div class="wishlist-box">
+                    <table class="wishlist-table add-wish-wishlist-table" id="mySearchTable">
 
-            <div class="wishlist-box">
-                <table class="wishlist-table add-wish-wishlist-table" id="mySearchTable">
+                        <thead>
+                        <tr>
+                            <th>Navn</th>
+                            <th>Vis ønskeliste</th>
+                        </tr>
+                        </thead>
 
-                    <thead>
-                    <tr>
-                        <th>Navn</th>
-                        <th>Vis ønskeliste</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr th:each="w : ${wishlists}">
-                        <td th:text="${w.wishlist_name}"></td>
-                        <td><a th:href="@{'/showWishListGuest/' + ${w.wishlist_id}}"><img src="/images/wish_list_icon3.png" height="20px" width="20px" alt="Picture: vist liste symbol"></a></td>
-                    </tr>
-                    </tbody>
-                </table>
+                        <tbody>
+                        <tr th:each="w : ${wishlists}">
+                            <td th:text="${w.wishlist_name}"></td>
+                            <td><a th:href="@{'/showWishListGuest/' + ${w.wishlist_id}}"><img
+                                    src="/images/wish_list_icon3.png" height="20px" width="20px"
+                                    alt="Picture: vist liste symbol"></a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <br>
-    <input type="button" value="Tilbage" onclick="history.back()">
-</section>
-
+        <br>
+        <input type="button" value="Tilbage" onclick="history.back()">
+    </section>
+</div>
 <footer>
     <div th:replace="fragments/footer-fragment"></div>
 </footer>

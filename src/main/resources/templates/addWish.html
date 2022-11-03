@@ -8,84 +8,86 @@
 </head>
 <body>
 
-<section class="background-add-wish">
-
+<div class="top-container">
     <div th:insert="fragments/header-fragment"></div>
-    <div class="add-wish-title-header"><h1><strong th:text="${wishlist_name}"></strong></h1></div>
-    <div class="add-wish-container">
-        <div class="add-wish-left">
-            <div class="add-wish-table-and-search-wrapper">
 
-                <div class="add-wish-search-bar">
-                    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg et ønske">
-                </div>
+    <section class="background-add-wish">
 
-                <table>
-                    <div class="wishlist-main-frame">
-                        <table class="wishlist-table add-wish-wishlist-table" id="mySearchTable">
-                            <thead>
-                            <tr th:if="${!wishes.empty}">
-                                <th>Name</th>
-                                <th>Pris</th>
-                                <th>Link</th>
-                                <th>Opdater</th>
-                                <th>Slet</th>
-                            </tr>
-                            </thead>
+        <div class="add-wish-title-header"><h1><strong th:text="${wishlist_name}"></strong></h1></div>
+        <div class="add-wish-container">
+            <div class="add-wish-left">
+                <div class="add-wish-table-and-search-wrapper">
 
-                            <tbody>
-                            <tr th:if="${wishes.empty}">
-                                <td>Ønskelisten er tom</td>
-                            </tr>
-                            <tr th:each="w : ${wishes}">
-                                <td th:text="${w.item_name}"></td>
-                                <td th:text="${w.item_price}"></td>
-                                <td><a th:href="${w.item_link}" target="_blank"><img src="/../images/link-logo.png"
-                                                                                     height="20px"></a></td>
-                                <td><a th:href="@{'/updateWish/' + ${w.item_id}}"><img src="/images/edit.png"
-                                                                                       height="20px" width="20px"
-                                                                                       alt="Picture: edit symbol"></a>
-                                </td>
-                                <td><a th:href="@{'/deleteWish/' + ${w.wishlist_id} + '/' + ${w.item_id}}"><img
-                                        src="/images/delete.png" height="30px" width="30px"
-                                        alt="Picture: delete symbol"></a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <div id="add-Wish-tilbage-button">
-                            <input type="button" value="Tilbage" onclick="history.back()">
-                        </div>
+                    <div class="add-wish-search-bar">
+                        <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg et ønske">
                     </div>
-                </table>
-            </div>
-            <div class="add-wish-right">
-                <div class="add-wish-empty-box"></div>
-                <div class="input-form-wishlist-add-wish">
-                    <h3>Tilføj et nyt ønske</h3>
-                    <form action="/addWish" method="post" th:action="@{/addWish/{wishlist_id}}" th:object="${wish}">
 
-                        <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist_id}">
-                        <label for="item_name">Ønskebeskrivelse:</label><br>
-                        <input id="item_name" name="item_name" type="text" placeholder="" autofocus required><br>
+                    <table>
+                        <div class="wishlist-main-frame">
+                            <table class="wishlist-table add-wish-wishlist-table" id="mySearchTable">
+                                <thead>
+                                <tr th:if="${!wishes.empty}">
+                                    <th>Name</th>
+                                    <th>Pris</th>
+                                    <th>Link</th>
+                                    <th>Opdater</th>
+                                    <th>Slet</th>
+                                </tr>
+                                </thead>
 
-                        <label for="item_price">Pris:</label><br>
-                        <input id="item_price" name="item_price" type="number"><br>
-
-                        <label for="item_link">Link:</label><br>
-                        <input id="item_link" name="item_link" type="text" value="https://www."
-                               placeholder="Husk at skrive https://www"><br><br>
-
-                        <button type="submit">Tilføj ønske</button>
-                    </form>
+                                <tbody>
+                                <tr th:if="${wishes.empty}">
+                                    <td>Ønskelisten er tom</td>
+                                </tr>
+                                <tr th:each="w : ${wishes}">
+                                    <td th:text="${w.item_name}"></td>
+                                    <td th:text="${w.item_price}"></td>
+                                    <td><a th:href="${w.item_link}" target="_blank"><img src="/../images/link-logo.png"
+                                                                                         height="20px"></a></td>
+                                    <td><a th:href="@{'/updateWish/' + ${w.item_id}}"><img src="/images/edit.png"
+                                                                                           height="20px" width="20px"
+                                                                                           alt="Picture: edit symbol"></a>
+                                    </td>
+                                    <td><a th:href="@{'/deleteWish/' + ${w.wishlist_id} + '/' + ${w.item_id}}"><img
+                                            src="/images/delete.png" height="30px" width="30px"
+                                            alt="Picture: delete symbol"></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div id="add-Wish-tilbage-button">
+                                <input type="button" value="Tilbage" onclick="history.back()">
+                            </div>
+                        </div>
+                    </table>
                 </div>
+                <div class="add-wish-right">
+                    <div class="add-wish-empty-box"></div>
+                    <div class="input-form-wishlist-add-wish">
+                        <h3>Tilføj et nyt ønske</h3>
+                        <form action="/addWish" method="post" th:action="@{/addWish/{wishlist_id}}" th:object="${wish}">
+
+                            <input id="wishlist_id" name="wishlist_id" type="hidden" required th:value="${wishlist_id}">
+                            <label for="item_name">Ønskebeskrivelse:</label><br>
+                            <input id="item_name" name="item_name" type="text" placeholder="" autofocus required><br>
+
+                            <label for="item_price">Pris:</label><br>
+                            <input id="item_price" name="item_price" type="number"><br>
+
+                            <label for="item_link">Link:</label><br>
+                            <input id="item_link" name="item_link" type="text" value="https://www."
+                                   placeholder="Husk at skrive https://www"><br><br>
+
+                            <button type="submit">Tilføj ønske</button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
-
         </div>
-    </div>
 
-</section>
-
+    </section>
+</div>
 <footer>
     <div th:replace="fragments/footer-fragment"></div>
 </footer>

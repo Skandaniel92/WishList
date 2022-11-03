@@ -384,7 +384,6 @@ tr:hover > td {
 
 .input-form-wishlist{
     padding-top: 100px;
-    margin: 20px;
 }
 
 .input-form-wishlist-add-wish {
@@ -394,7 +393,7 @@ tr:hover > td {
 .add-wish-table-and-search-wrapper {
     display: grid;
     justify-items: end;
-    margin: 20px;
+   /* margin: 20px;*/
 }
 
 .add-wish-container {
@@ -491,16 +490,12 @@ tr:hover > td {
         font-size: 35px;
         font-weight: bold;
     }
-
-
-
 }
 
 .add-wish-title-header {
     display: grid;
     justify-items: center;
     padding-top: 100px;
-    margin: 20px;
 
 }
 

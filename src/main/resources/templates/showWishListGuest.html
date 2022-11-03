@@ -8,48 +8,50 @@
 </head>
 <body>
 
-<div th:insert="fragments/header-fragment"></div>
+<div class="top-container">
+    <div th:insert="fragments/header-fragment"></div>
 
-<section class="wishlist-background editWishes-marcus">
-    <div class="marcus-box-tabel">
-        <h1><strong th:text="${wishlist_name}"></strong></h1>
-        <div class="editWishes-table">
+    <section class="wishlist-background editWishes-marcus">
+        <div class="marcus-box-tabel">
+            <h1><strong th:text="${wishlist_name}"></strong></h1>
+            <div class="editWishes-table">
 
-            <div class="search-wishlist">
-                <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg en ønskeliste    ">
-            </div>
+                <div class="search-wishlist">
+                    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Fremsøg en ønskeliste    ">
+                </div>
 
-            <div class="wishlist-box">
-                <table class="wishlist-table add-wish-wishlist-table" id="mySearchTable">
+                <div class="wishlist-box">
+                    <table class="wishlist-table add-wish-wishlist-table" id="mySearchTable">
 
-                    <thead>
-                    <tr th:if="${!wishes.empty}">
-                        <th>Name</th>
-                        <th>Pris</th>
-                        <th>Link</th>
-                    </tr>
-                    </thead>
+                        <thead>
+                        <tr th:if="${!wishes.empty}">
+                            <th>Name</th>
+                            <th>Pris</th>
+                            <th>Link</th>
+                        </tr>
+                        </thead>
 
-                    <tbody>
-                    <tr th:if="${wishes.empty}">
-                        <td>Ønskelisten er tom</td>
-                    </tr>
-                    <tr th:each="w : ${wishes}">
-                        <td th:text="${w.item_name}"></td>
-                        <td th:text="${w.item_price}"></td>
-                        <td><a th:href="${w.item_link}" target="_blank"><img src="/images/link-logo.png" height="20px"></a></td>
-                    </tr>
-                    </tbody>
-                </table>
+                        <tbody>
+                        <tr th:if="${wishes.empty}">
+                            <td>Ønskelisten er tom</td>
+                        </tr>
+                        <tr th:each="w : ${wishes}">
+                            <td th:text="${w.item_name}"></td>
+                            <td th:text="${w.item_price}"></td>
+                            <td><a th:href="${w.item_link}" target="_blank"><img src="/images/link-logo.png"
+                                                                                 height="20px"></a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <br>
-    <form >
-        <input type="button" value="Tilbage" onclick="history.back()">
-    </form>
-</section>
-
+        <br>
+        <form>
+            <input type="button" value="Tilbage" onclick="history.back()">
+        </form>
+    </section>
+</div>
 <footer>
     <div th:replace="fragments/footer-fragment"></div>
 </footer>
