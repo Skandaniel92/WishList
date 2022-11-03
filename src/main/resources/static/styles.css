@@ -251,8 +251,8 @@ a:visited {
 
 .wishlist-table {
     border-collapse: collapse;
-    border: 2px solid black;
-    padding-top: 50px;
+    /*border: 2px solid black;*/
+    /*padding-top: 50px;*/
     font-size: 0.9em;
     min-width: 400px;
     /* For at få buede kanter*/
@@ -260,6 +260,26 @@ a:visited {
     /*border-radius: 5px 5px 0 0;*/
     overflow: hidden;
     /*box-shadow: 0 0 3px white;*/
+    background-color: snow;
+}
+
+::-webkit-scrollbar
+{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track
+{
+    background: rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 80px 80px;
+    border-bottom-right-radius: 80px 80px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 80px 80px;
+    border-bottom-right-radius: 80px 80px;
 }
 
 .search-wishlist {
@@ -314,6 +334,10 @@ tr:hover > td {
     width: 100%;
     position: absolute;
     top: 30%;
+}
+
+.wishlist-main-frame > tbody {
+    height: 200px;
 }
 
 .daniels-box-tabel{
@@ -404,6 +428,12 @@ tr:hover > td {
     }
 }
 
+.add-wish-wishlist-table {
+    overflow-y:scroll;
+    height:350px;
+    display:block;
+}
+
 /* add-wish done responsive */
 @media all and (max-width: 601px) {
     .add-wish-container {
@@ -480,6 +510,7 @@ tr:hover > td {
     align-content: start;
     height: 50px;
 }
+
 
 .add-wish-left {
     display: grid;
