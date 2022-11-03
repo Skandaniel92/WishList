@@ -254,7 +254,7 @@ a:visited {
     /*border: 2px solid black;*/
     /*padding-top: 50px;*/
     font-size: 0.9em;
-    min-width: 400px;
+    /*min-width: 400px; blev fjernet fordi at gæste listerne så mærkelige ud*/
     /* For at få buede kanter*/
     border-radius: 15px;
     /*border-radius: 5px 5px 0 0;*/
