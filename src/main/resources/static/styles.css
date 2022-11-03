@@ -1,6 +1,10 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
+
+
 body {
+    font-family: 'Raleway', sans-serif;
     animation: fadeInAnimation ease 4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -120,8 +124,9 @@ nav > ul {
     display: flex;
     align-items: center;
     color: red;
+    text-shadow: 0 0 20px white;
 }
-/*left-header nav ul li a*/
+
 
 
 li {
