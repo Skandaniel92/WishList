@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <title>Julegaveønsker</title>
     <link rel="icon" href="images/christmas-tree.png">
+    <script src="/mainjs.js"></script>
 </head>
 <body>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top" >&#8593</button>
+
+
 <section class="index-top-container">
 
     <div th:insert="fragments/header-fragment"></div>
@@ -32,13 +37,11 @@
 
 </section>
 
-
-
 <div class="menu-pages">
 
     <section id="omos" class="background-om-os">
-        <div class="button-smooth">
-            <input type="button" value="Til toppen" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        <div>
+
         </div>
         <div class="om-os-textbox">
             <div><h1>Hej, vi er hovederne bag Juleønskeskyen</h1></div>

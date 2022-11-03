@@ -38,8 +38,8 @@ section {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-
-}
+    z-index: 2;
+ }
 
 
 .wishlist-background{
@@ -499,6 +499,32 @@ footer img {
 
 }
 
-.button-smooth {
 
+
+/*scroll button inspireret fra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top*/
+
+#myBtn {
+    display: grid; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: white; /* Set a background color */
+    color: red; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    font-size: 24px; /* Increase font size */
+    justify-self: center;
+    border-radius: 50%;
+
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+html {
+    scroll-behavior: smooth;
 }
