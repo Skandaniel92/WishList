@@ -528,3 +528,12 @@ footer img {
 html {
     scroll-behavior: smooth;
 }
+
+.alt-back-btn-user{
+    text-decoration: none;
+    color: black;
+}
+
+.alt-back-btn-user a:visited{
+    color: black;
+}
