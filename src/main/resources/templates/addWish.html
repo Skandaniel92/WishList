@@ -40,13 +40,22 @@
                             <tr th:each="w : ${wishes}">
                                 <td th:text="${w.item_name}"></td>
                                 <td th:text="${w.item_price}"></td>
-                                <td><a th:href="${w.item_link}" target="_blank"><img src="/../images/link-logo.png" height="20px"></a> </td>
-                                <td><a th:href="@{'/updateWish/' + ${w.item_id}}"><img src="/images/edit.png" height="20px" width="20px" alt="Picture: edit symbol"></a></td>
-                                <td><a th:href="@{'/deleteWish/' + ${w.wishlist_id} + '/' + ${w.item_id}}"><img src="/images/delete.png" height="30px" width="30px" alt="Picture: delete symbol"></a>
+                                <td><a th:href="${w.item_link}" target="_blank"><img src="/../images/link-logo.png"
+                                                                                     height="20px"></a></td>
+                                <td><a th:href="@{'/updateWish/' + ${w.item_id}}"><img src="/images/edit.png"
+                                                                                       height="20px" width="20px"
+                                                                                       alt="Picture: edit symbol"></a>
+                                </td>
+                                <td><a th:href="@{'/deleteWish/' + ${w.wishlist_id} + '/' + ${w.item_id}}"><img
+                                        src="/images/delete.png" height="30px" width="30px"
+                                        alt="Picture: delete symbol"></a>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
+                        <div id="add-Wish-tilbage-button">
+                            <input type="button" value="Tilbage" onclick="history.back()">
+                        </div>
                     </div>
                 </table>
             </div>
@@ -64,14 +73,17 @@
                         <input id="item_price" name="item_price" type="number"><br>
 
                         <label for="item_link">Link:</label><br>
-                        <input id="item_link" name="item_link" type="text"><br><br>
+                        <input id="item_link" name="item_link" type="text" value="https://www."
+                               placeholder="Husk at skrive https://www"><br><br>
 
                         <button type="submit">Tilføj ønske</button>
                     </form>
                 </div>
             </div>
+
         </div>
     </div>
+
 </section>
 
 <footer>

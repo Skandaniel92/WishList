@@ -80,7 +80,7 @@ public class WishlistRepository {
       while (rs.next()) {
         int item_id = rs.getInt(1);
         String item_name = rs.getString(2);
-        double item_price = rs.getDouble(3);
+        String item_price = rs.getString(3);
         String item_link = rs.getString(4);
         //wishlist_id = rs.getInt(5);
 
@@ -115,7 +115,7 @@ public class WishlistRepository {
           "values (?,?,?,?)";
       PreparedStatement pst = conn.prepareStatement(sql);
       pst.setString(1,wish.getItem_name());
-      pst.setDouble(2,wish.getItem_price());
+      pst.setString(2,wish.getItem_price());
       pst.setString(3, wish.getItem_link());
       pst.setInt(4,wish.getWishlist_id());
       pst.executeUpdate();
@@ -191,7 +191,7 @@ public class WishlistRepository {
       while (rs.next()) {
         wish.setItem_id(rs.getInt(1));
         wish.setItem_name(rs.getString(2));
-        wish.setItem_price(rs.getDouble(3));
+        wish.setItem_price(rs.getString(3));
         wish.setItem_link(rs.getString(4));
         wish.setWishlist_id(rs.getInt(5));
       }
@@ -211,7 +211,7 @@ public class WishlistRepository {
 
       PreparedStatement pst = conn.prepareStatement(sql);
       pst.setString(1,wish.getItem_name());
-      pst.setDouble(2,wish.getItem_price());
+      pst.setString(2,wish.getItem_price());
       pst.setString(3, wish.getItem_link());
       pst.setInt(4, wish.getWishlist_id());
       pst.setInt(5, wish.getItem_id());

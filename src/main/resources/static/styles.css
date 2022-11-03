@@ -528,6 +528,12 @@ tr:hover > td {
     height: 50px;
 }
 
+#add-Wish-tilbage-button {
+    width: 40px;
+    display: grid;
+    justify-self: start;
+    padding-top: 10px;
+}
 
 .show-wishlist {
     /*padding-top: 50px;*/
@@ -540,22 +546,29 @@ tr:hover > td {
     background-repeat: no-repeat;
     background-size: cover;
     color: azure;
+    margin: 0;
 }
 
 .kontakt-text {
     width: 400px;
     font-size: 2vw; /* 2vw = 2 % of viewport width */
     max-width: 400px;
-    min-font-size: 2vw;
-
+    min-font-size: 20px;
+    padding-top: 10%;
+    margin-left: 5%;
 }
-
-
-
 
 .kontakt-text a {
     color: azure;
 }
+
+
+
+.kontakt-text > h1 {
+    margin: 0;
+    padding: 0;
+}
+
 
 .footer-style{
     text-align: center;
@@ -591,7 +604,8 @@ footer img {
     .kontakt-text {
         font-size: 25px; /* 2vw = 2 % of viewport width */
         padding-left: 30px;
-    line-height: 40px;}
+        line-height: 40px;
+    }
 
 }
 
@@ -604,6 +618,10 @@ footer img {
 
 }
 
+/* Fælles tilbage knap styling*/
+.tilbage-knap {
+    padding-top: 20px;
+}
 
 
 /*scroll button inspireret fra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top*/

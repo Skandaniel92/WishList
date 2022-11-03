@@ -14,7 +14,7 @@
         <form action="/createWishList" method="post" th:action="@{/createWishList}" th:object="${wishList}">
             <label for="wishlist_name">Ønskelistens navn </label>
             <input id="wishlist_name" name="wishlist_name" type="text" autofocus required>
-            <button type="submit"> opret ønskeliste</button>
+            <button type="submit"> Opret ønskeliste</button>
             <button class="alt-back-btn-user"><a th:href="@{'editWishes'}" style="text-decoration: none">Tilbage </a></button>
         </form>
 
