@@ -21,9 +21,7 @@
     <div class="daniels-box-tabel">
 
         <h1><strong th:text="${wishlist_name}"></strong></h1>
-        <form style="align-self: center">
-            <input type="button" value="Tilbage" onclick="history.back()">
-        </form> <br><br>
+
         <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Søg i listen">
         <div class="wishlist-box scrollable">
             <table class="wishlist-table-daniel" id="mySearchTable">
@@ -48,8 +46,12 @@
                 </tbody>
 
             </table>
-
         </div>
+        <br><br>
+        <form >
+            <input type="button" value="Tilbage" onclick="history.back()">
+        </form>
+
     </div>
 
 </section>
