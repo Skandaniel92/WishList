@@ -127,6 +127,10 @@ nav > ul {
     text-shadow: 0 0 20px white;
 }
 
+nav.menu a:hover{
+    text-shadow: 0 0 10px white;
+}
+
 
 
 li {
@@ -276,6 +280,7 @@ a:visited {
 ::-webkit-scrollbar-track
 {
     background: rgba(0, 0, 0, 0.1);
+
     border-top-right-radius: 80px 80px;
     border-bottom-right-radius: 80px 80px;
 }
@@ -439,6 +444,8 @@ tr:hover > td {
 }
 
 /* add-wish done responsive */
+
+
 @media all and (max-width: 601px) {
     .add-wish-container {
         display: grid;
@@ -489,6 +496,7 @@ tr:hover > td {
 
     .input-form-wishlist-add-wish > h3 {
         font-size: 30px;
+        padding-top: 5px;
     }
 
     .add-wish-title-header > h1 {
