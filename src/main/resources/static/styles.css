@@ -25,7 +25,7 @@ body {
 body, html {
     height: 100%;
     margin: 0;
-}
+   }
 
 .box {
     background-color: rgb(134, 134, 134);
@@ -288,7 +288,7 @@ a:visited {
 }
 
 .search-wishlist {
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .wishlist-box {
@@ -528,11 +528,12 @@ tr:hover > td {
     height: 50px;
 }
 
-#add-Wish-tilbage-button {
+.add-Wish-tilbage-button {
     width: 40px;
     display: grid;
     justify-self: start;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .show-wishlist {
@@ -556,6 +557,7 @@ tr:hover > td {
     min-font-size: 20px;
     padding-top: 10%;
     margin-left: 5%;
+    line-height: 40px;
 }
 
 .kontakt-text a {
