@@ -231,8 +231,9 @@ li {
     font-size: 17px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     /*margin: 50px 10px 150px 10px;*/
-    margin: 10% 5% 25% 5%;
+    margin: 10% 5% 55% 5%;
     padding: 0px 20px 0px 20px;
+
 
     /*padding-top: 25%;*/
     display: grid;
@@ -240,6 +241,7 @@ li {
     font-size: 1em;
     border: black;
 }
+
 
 
 #omos {
